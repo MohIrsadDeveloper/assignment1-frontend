@@ -1,0 +1,25 @@
+<table class="table text-center w-md-75 mt-4">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">User Name</th>
+        <th scope="col">Email Id</th>
+        <th scope="col">Actions</th>
+        <button class="btn btn-primary bg-primary" routerLink="/dashboard/addUser">Add User</button>
+        <button class="btn btn-danger bg-danger ms-3" (click)="onLogout()">Logout</button>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of userList.data">
+        <th scope="row">{{user.id}}</th>
+        <td>{{user.username}}</td>
+        <td>{{user.email}}</td>
+        <td>
+            <button class="btn btn-success" (click)="onView(user.id)">View</button>
+            <button class="btn btn-warning mx-3" (click)="onEdit(user.id)">Edit</button>
+            <button class="btn btn-danger" (click)="onDelete(user.id)">Delete</button>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>

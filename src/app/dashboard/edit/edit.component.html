@@ -1,0 +1,29 @@
+<div class="container w-50">
+    <div class="row">
+        <div class="col">
+            <div class="card p-3 my-4">
+                <h3 class="text-center">Update Form</h3>
+                <form #editForm="ngForm" (submit)="onEdit(editForm)">
+                    <div class="mb-3">
+                      <label for="username" class="form-label">User Name</label>
+                      <input [(ngModel)]="myEdit.username" name="username" type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                      <label for="email" class="form-label">Email address</label>
+                      <input [(ngModel)]="myEdit.email" name="email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" readonly>
+                    </div>
+                    <div class="mb-3">
+                      <label for="password" class="form-label">Password</label>
+                      <input [(ngModel)]="myEdit.password" name="password" type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                      <label for="confirmPassword" class="form-label">Confirm Password</label>
+                      <input [(ngModel)]="myEdit.confirmPassword" name="confirmPassword" type="text" class="form-control">
+                    </div>
+                    <button type="submit" class="btn btn-success">Update Now</button>
+                    <button type="submit" class="btn btn-primary mx-4" routerLink="/dashboard">Cancel</button>
+                  </form>
+            </div>
+        </div>
+    </div>
+</div>
